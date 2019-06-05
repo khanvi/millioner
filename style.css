@@ -1,0 +1,50 @@
+body{
+	background-image: url(img2.jpg);
+	background-size: 100%
+}
+.form{
+	text-align: center;
+	font-size: 50px;
+}
+.table{
+	width: 10%;
+}
+.stwo{
+	background: green;
+	display: flex;
+	height: 100px;
+	padding-top: 25px;
+}
+.sgg{
+	background: blue;
+	height: 50px;
+	width: 40%;
+	margin-right: auto;
+	margin-left: auto;
+	font-size: 50px;
+	color: white;
+}
+.btn{
+	background: yellow;
+	width: 300px;
+	height: 200px;
+	font-size: 30px;
+}
+.snone{
+	display: none
+}
+.tableList{
+	margin-top: 10px;
+	font-size: 20px;
+	background: blue;
+	color: white;
+}
+.winner{
+	text-align: center;
+	font-size: 50px;
+	color: red;
+	background: white;
+}
+.g{
+	background: green
+}

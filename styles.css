@@ -1,0 +1,28 @@
+.form{
+	font-size: 30px;
+	margin-right: 20px;
+	width: 100px;
+	height: 100px;
+	background: red;
+	text-align: center;
+	color: red;
+	padding-top: 30px;
+	box-sizing: border-box;
+	font-family: Arial;
+	margin-top: 20px;
+}
+.main{
+	display: flex;
+}
+.inp{
+	margin-top: 50px;
+}
+.btn{
+	background: red;
+}
+.wordes{
+	font-size: 30px;
+	margin-right: 20px;
+	margin-top: 20px;
+	background: yellow;
+}

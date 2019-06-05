@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>	</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+	<script type="text/javascript">
+		let word = ['','в','и','т','я'];
+		let question = ['', 'как меня зовут ?']
+		let wordes = document.createElement('div');
+   		document.body.appendChild(wordes);
+   		wordes.innerHTML = question[1];
+   		wordes.classList.add('wordes')
+
+		let main = document.createElement('div');
+   		document.body.appendChild(main);
+		for(let i=1;i<word.length;i++){
+			let div = document.createElement('div');
+			
+			main.appendChild(div);
+			main.classList.add('main');
+			div.classList.add('form');
+			div.innerHTML = word[i];
+   		}
+   		let lol = document.querySelectorAll('.form')
+   		let inp = document.createElement('input');
+   		document.body.appendChild(inp);
+   		inp.classList.add('inp')
+   		let btn = document.createElement('button');
+   		document.body.appendChild(btn);
+   		btn.classList.add('btn')
+   		btn.innerHTML = 'Click me';
+   		let p = 0;
+   		btn.onclick = function(){
+   			let k=0;
+   			for(let i=1;i<word.length;i++){
+   					if(inp.value == word[i]){lol[i-1].style.color = 'white'; k=2;p++}
+   					else if(k==0) k=1;
+   				}
+   			if(k==1) alert('NO');
+   			if(p==word.length-1) alert('win')
+   		}
+   		
+	</script> 
+</body>
+</html>

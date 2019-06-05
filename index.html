@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="table">
+		<div class="tableList">1.  500</div>
+		<div class="tableList">2. 1000</div>
+		<div class="tableList">3. 2000</div>
+		<div class="tableList">4. 5000</div>
+		<div class="tableList g">5. 10000</div>
+		<div class="tableList">6. 20000</div>
+		<div class="tableList">7. 35000</div>
+		<div class="tableList">8. 50000</div>
+		<div class="tableList">9. 75000</div>
+		<div class="tableList g">10. 100000</div>
+		<div class="tableList">11. 200000</div>
+		<div class="tableList">12. 500000</div>
+		<div class="tableList">13. 1000000</div>
+		<div class="tableList">14. 1500000</div>
+		<div class="tableList g">15. 3000000</div>
+	</div>
+	<button class="btn" onclick="won() , lol()">click</button>
+   <script type="text/javascript">
+   		let table = document.querySelector('.table');
+   		let tableList = document.querySelectorAll('.tableList');
+
+
+   		let btn = document.querySelector('.btn');
+   		let error = document.querySelectorAll('.error')
+   		let question = ['', '1. как меня зовут ?',
+   							'2. сколько мне лет ?',
+   							'3. какой у меня рост ?',
+   							'4. pop или kpop ?',
+   							'5. где я учусь ?',
+   							'6. как зовут человека за мной?',
+   							'7. скольйо ему лет ?',
+   							'8. какой у него рост ?',
+   							'9. как зовут Анну',
+   							'10. где он учиться ?',
+   							'11. gg?',
+   							'12. gg?',
+   							'13. gg?',
+   							'14. gg?',
+   							'15. gg?']
+   		let ans = {
+   			w1:['','Витя','Петя','Катя','Валера'],//1
+   			w2:['',14,15,16,17],//2
+   			w3:['',169,170,171,172],//2
+   			w4:['','pop','kpop','pop and kpop','no'],//3
+   			w5:['','Rl','FTL','12','17'],//1
+   			w6:['','Родион','Коля','Ваня','Сергей'],//4
+   			w7:['',15,16,17,14],//1
+   			w8:['',175,172,150,168],//2
+   			w9:['','Анна','Катя','Женя','Саша'],//1
+   			w10:['','Rl','12','17','FTL'],//4
+   			w11:['','gg','gg','gg','tt'],//4
+   			w12:['','gg','gg','gg','tt'],//4
+   			w13:['','gg','gg','gg','tt'],//4
+   			w14:['','gg','gg','gg','tt'],//4
+   			w15:['','gg','gg','gg','tt']//4
+   		}
+   		let array = ['',1,2,2,3,1,4,1,2,1,4,4,4,4,4,4];
+   		let k=1;
+   		let pop = 0;
+   		function won(){
+   			let main = document.createElement('div');
+   			document.body.appendChild(main);
+   			let div = document.createElement('div');
+			main.appendChild(div);
+			div.classList.add('form')
+			div.innerHTML = question[k];
+			for(let itwo=1;itwo<3;itwo++){
+				let two = document.createElement('div');
+				main.appendChild(two);
+				two.classList.add('stwo')
+
+				for(let igg=1;igg<3;igg++){
+					let num = igg*2 + itwo -2;
+					let gg = document.createElement('button');
+					two.appendChild(gg);
+					gg.classList.add('sgg');
+				if(k==1){
+						gg.innerHTML = igg*2 + itwo -2  + '. '+ans.w1[igg*2 + itwo -2] //w1
+						if(num!=array[k]) gg.onclick = function(){
+								table.style.display = 'none';
+								main.style.display = 'none';
+								let winner = document.createElement('div');
+   								document.body.appendChild(winner);
+   								winner.innerHTML = 'You lose';
+   								winner.classList.add('winner')
+							} //acorrect answer 1
+						else {gg.onclick = function(){
+							main.style.display = 'none';
+							tableList[k-2].style.background = 'black';
+							won()
+						}}
+					}
+				if(k==2){
+						gg.innerHTML = igg*2 + itwo -2  + '. '+ans.w2[igg*2 + itwo -2] //w2
+						if(num!=array[k]) gg.onclick = function(){
+								table.style.display = 'none';
+								main.style.display = 'none';
+								let winner = document.createElement('div');
+   								document.body.appendChild(winner);
+   								winner.innerHTML = 'You lose';
+   								winner.classList.add('winner')
+							}
+						else {gg.onclick = function(){
+							main.style.display = 'none';
+							tableList[k-2].style.background = 'black';
+							tableList[k-3].style.background = 'blue';
+							won()
+						}}
+					}
+				if(k==3){
+						gg.innerHTML = igg*2 + itwo -2  + '. '+ans.w3[igg*2 + itwo -2] //w3
+						if(num!=array[k]) gg.onclick = function(){
+								table.style.display = 'none';
+								main.style.display = 'none';
+								let winner = document.createElement('div');
+   								document.body.appendChild(winner);
+   								winner.innerHTML = 'You lose';
+   								winner.classList.add('winner')
+							}
+						else {gg.onclick = function(){
+							main.style.display = 'none';
+							tableList[k-2].style.background = 'black';
+							tableList[k-3].style.background = 'blue';
+							won()
+						}}
+					}
+				if(k==4){
+						gg.innerHTML = igg*2 + itwo -2  + '. '+ans.w4[igg*2 + itwo -2] //w4
+						if(num!=array[k]) gg.onclick = function(){
+								table.style.display = 'none';
+								main.style.display = 'none';
+								let winner = document.createElement('div');
+   								document.body.appendChild(winner);
+   								winner.innerHTML = 'You lose';
+   								winner.classList.add('winner')
+							}
+						else {gg.onclick = function(){
+							main.style.display = 'none';
+							tableList[k-2].style.background = 'black';
+							tableList[k-3].style.background = 'blue';
+							won()
+						}}
+					}
+				if(k==5){
+						gg.innerHTML = igg*2 + itwo -2  + '. '+ans.w5[igg*2 + itwo -2] //w5
+						if(num!=array[k]) gg.onclick = function(){
+								table.style.display = 'none';
+								main.style.display = 'none';
+								let winner = document.createElement('div');
+   								document.body.appendChild(winner);
+   								winner.innerHTML = 'You lose';
+   								winner.classList.add('winner')
+							}
+						else {gg.onclick = function(){
+							main.style.display = 'none';
+							tableList[k-2].style.background = 'black';
+							tableList[k-3].style.background = 'blue';
+							won()
+						}}
+					}
+				if(k==6){
+						gg.innerHTML = igg*2 + itwo -2  + '. '+ans.w6[igg*2 + itwo -2] //w6
+						if(num!=array[k]) gg.onclick = function(){
+								table.style.display = 'none';
+								main.style.display = 'none';
+								let winner = document.createElement('div');
+   								document.body.appendChild(winner);
+   								winner.innerHTML = 'You win ' + 10000;
+   								winner.classList.add('winner')
+							}
+						else {gg.onclick = function(){
+							main.style.display = 'none';
+							tableList[k-2].style.background = 'black';
+							tableList[k-3].style.background = 'blue';
+							won()
+						}}
+					}
+				if(k==7){
+						gg.innerHTML = igg*2 + itwo -2  + '. '+ans.w7[igg*2 + itwo -2] //w7
+						if(num!=array[k]) gg.onclick = function(){
+								table.style.display = 'none';
+								main.style.display = 'none';
+								let winner = document.createElement('div');
+   								document.body.appendChild(winner);
+   								winner.innerHTML = 'You win ' + 10000
+   								winner.classList.add('winner')
+							}
+						else {gg.onclick = function(){
+							main.style.display = 'none';
+							tableList[k-2].style.background = 'black';
+							tableList[k-3].style.background = 'blue';
+							won()
+						}}
+					}
+				if(k==8){
+						gg.innerHTML = igg*2 + itwo -2  + '. '+ans.w8[igg*2 + itwo -2] //w8
+						if(num!=array[k]) gg.onclick = function(){
+								table.style.display = 'none';
+								main.style.display = 'none';
+								let winner = document.createElement('div');
+   								document.body.appendChild(winner);
+   								winner.innerHTML = 'You win ' + 10000
+   								winner.classList.add('winner')
+							}
+						else {gg.onclick = function(){
+							main.style.display = 'none';
+							tableList[k-2].style.background = 'black';
+							tableList[k-3].style.background = 'blue';
+							won()
+						}}
+					}
+				if(k==9){
+						gg.innerHTML = igg*2 + itwo -2  + '. '+ans.w9[igg*2 + itwo -2] //w9
+						if(num!=array[k]) gg.onclick = function(){
+								table.style.display = 'none';
+								main.style.display = 'none';
+								let winner = document.createElement('div');
+   								document.body.appendChild(winner);
+   								winner.innerHTML = 'You win ' + 10000
+   								winner.classList.add('winner')
+							}
+						else {gg.onclick = function(){
+							main.style.display = 'none';
+							tableList[k-2].style.background = 'black';
+							tableList[k-3].style.background = 'blue';
+							won()
+						}}
+					}
+				if(k==10){
+						gg.innerHTML = igg*2 + itwo -2  + '. '+ans.w10[igg*2 + itwo -2] //w10
+						if(num!=array[k]) gg.onclick = function(){
+								table.style.display = 'none';
+								main.style.display = 'none';
+								let winner = document.createElement('div');
+   								document.body.appendChild(winner);
+   								winner.innerHTML = 'You win ' + 10000
+   								winner.classList.add('winner')
+							}
+						else {gg.onclick = function(){
+							main.style.display = 'none';
+							tableList[k-2].style.background = 'black';
+							tableList[k-3].style.background = 'blue';
+							won()
+						}}
+					}
+				if(k==11){
+						gg.innerHTML = igg*2 + itwo -2  + '. '+ans.w11[igg*2 + itwo -2] //w11
+						if(num!=array[k]) gg.onclick = function(){
+								table.style.display = 'none';
+								main.style.display = 'none';
+								let winner = document.createElement('div');
+   								document.body.appendChild(winner);
+   								winner.innerHTML = 'You win ' + 100000
+   								winner.classList.add('winner')
+							}
+						else {gg.onclick = function(){
+							main.style.display = 'none';
+							tableList[k-2].style.background = 'black';
+							tableList[k-3].style.background = 'blue';
+							won()
+						}}
+					}
+				if(k==12){
+						gg.innerHTML = igg*2 + itwo -2  + '. '+ans.w12[igg*2 + itwo -2] //w12
+						if(num!=array[k]) gg.onclick = function(){
+								table.style.display = 'none';
+								main.style.display = 'none';
+								let winner = document.createElement('div');
+   								document.body.appendChild(winner);
+   								winner.innerHTML = 'You win ' + 100000
+   								winner.classList.add('winner')
+							}
+						else {gg.onclick = function(){
+							main.style.display = 'none';
+							tableList[k-2].style.background = 'black';
+							tableList[k-3].style.background = 'blue';
+							won()
+						}}
+					}
+				if(k==13){
+						gg.innerHTML = igg*2 + itwo -2  + '. '+ans.w13[igg*2 + itwo -2] //w13
+						if(num!=array[k]) gg.onclick = function(){
+								table.style.display = 'none';
+								main.style.display = 'none';
+								let winner = document.createElement('div');
+   								document.body.appendChild(winner);
+   								winner.innerHTML = 'You win ' + 100000
+   								winner.classList.add('winner')
+							}
+						else {gg.onclick = function(){
+							main.style.display = 'none';
+							tableList[k-2].style.background = 'black';
+							tableList[k-3].style.background = 'blue';
+							won()
+						}}
+					}
+				if(k==14){
+						gg.innerHTML = igg*2 + itwo -2  + '. '+ans.w14[igg*2 + itwo -2] //w14
+						if(num!=array[k]) gg.onclick = function(){
+								table.style.display = 'none';
+								main.style.display = 'none';
+								let winner = document.createElement('div');
+   								document.body.appendChild(winner);
+   								winner.innerHTML = 'You win ' + 100000
+   								winner.classList.add('winner')
+							}
+						else {gg.onclick = function(){
+							main.style.display = 'none';
+							tableList[k-2].style.background = 'black';
+							tableList[k-3].style.background = 'blue';
+							won()
+						}}
+					}
+				if(k==15){
+						gg.innerHTML = igg*2 + itwo -2  + '. '+ans.w15[igg*2 + itwo -2] //w15
+						if(num!=array[k]) gg.onclick = function(){
+								table.style.display = 'none';
+								main.style.display = 'none';
+								let winner = document.createElement('div');
+   								document.body.appendChild(winner);
+   								winner.innerHTML = 'You lose';
+   								winner.classList.add('winner')
+							}
+						else {gg.onclick = function(){
+							main.style.display = 'none';
+							tableList[k-2].style.background = 'black';
+							tableList[k-3].style.background = 'blue';
+							win()
+						}}
+					}
+				}
+			}
+			function kek(){
+				div.style.display = 'none'
+			}
+			k++;
+			//main.style.display = 'none';
+		}
+		
+		function win(){
+			table.style.display = 'none'
+			let winner = document.createElement('div');
+   			document.body.appendChild(winner);
+   			winner.innerHTML = 'You win ' + 3000000;
+   			winner.classList.add('winner')
+		}
+		function lol(){
+			btn.style.display = 'none'
+		}
+		
+   </script>
+</body>
+</html>
